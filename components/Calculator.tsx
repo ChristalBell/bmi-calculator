@@ -97,7 +97,8 @@ const Calculator = () => {
       <Box>
         <button onClick={calculateBMI}>Calculate </button>
         <Typography>Your BMI is ...</Typography>
-        <Typography>{bmi.toFixed(2)}</Typography>
+        {/* <Typography>{bmi.toFixed(2)}</Typography> */}
+        <Typography>{bmi}</Typography>
       </Box>
     </Box>
   );
