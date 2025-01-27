@@ -8,14 +8,15 @@ const Calculator = () => {
   const [bmi, setBmi] = useState<any>(null);
   const [weight, setWeight] = useState<any>(null);
   const [height, setHeight] = useState<any>(null);
+  const [feet, setFeet] = useState<any>(null);
+  const [inches, setInches] = useState<any>(null);
 
   const calculateBMI = () => {
     if (selectedValue === "Metric") {
-      const heightSquared = (height / 100) ** 2;
-
-      setBmi(weight / heightSquared);
+      setBmi(weight / (height / 100) ** 2);
     } else if (selectedValue === "Imperial") {
-      setBmi((weight / height ** 2) * 703);
+      const totalInches = Number(feet) * 12 + Number(inches);
+      setBmi((weight / totalInches ** 2) * 703);
     }
   };
 
@@ -41,27 +42,62 @@ const Calculator = () => {
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography>Height</Typography>
-        <input
-          type="text"
-          onChange={(e) => {
-            setHeight(e.target.value);
-          }}
-        />
-        <Typography>cm</Typography>
 
+        {selectedValue === "Metric" ? (
+          <Box>
+            <input
+              type="text"
+              onChange={(e) => {
+                setHeight(e.target.value);
+              }}
+            />
+            <Typography>cm</Typography>
+          </Box>
+        ) : (
+          <Box>
+            <input
+              type="text"
+              onChange={(e) => {
+                setFeet(e.target.value);
+              }}
+            />
+            <Typography>ft</Typography>
+            <input
+              type="text"
+              onChange={(e) => {
+                setInches(e.target.value);
+              }}
+            />
+            <Typography>in</Typography>
+          </Box>
+        )}
         <Typography>Weight</Typography>
-        <input
-          onChange={(e) => {
-            setWeight(e.target.value);
-          }}
-          type="text"
-        />
-        <Typography>kg</Typography>
+        {selectedValue === "Metric" ? (
+          <Box>
+            <input
+              onChange={(e) => {
+                setWeight(e.target.value);
+              }}
+              type="text"
+            />
+            <Typography>kg</Typography>
+          </Box>
+        ) : (
+          <Box>
+            <input
+              onChange={(e) => {
+                setWeight(e.target.value);
+              }}
+              type="text"
+            />
+            <Typography>lb</Typography>
+          </Box>
+        )}
       </Box>
       <Box>
         <button onClick={calculateBMI}>Calculate </button>
         <Typography>Your BMI is ...</Typography>
-        <Typography>{bmi}</Typography>
+        <Typography>{bmi.toFixed(2)}</Typography>
       </Box>
     </Box>
   );
