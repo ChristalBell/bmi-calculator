@@ -31,8 +31,8 @@ const Calculator = () => {
         padding: "1.5rem",
         borderRadius: "1rem",
         position: "absolute",
-        top: 275,
-        left: 450,
+        top: 175,
+        right: 150,
         zIndex: 1,
       }}
     >

@@ -17,19 +17,33 @@ const Hero = () => {
   ];
   console.log(Headlines[0].info);
   return (
-    <Box sx={{ marginLeft: "4rem", marginTop: "2rem" }}>
+    <Box sx={{ marginLeft: "4rem" }}>
       <Box
         className="top"
         sx={{
-          backgroundImage: `linear-gradient(0.3turn,${COLORS.skyBlue},${COLORS.lightBlue})`,
+          backgroundImage: `linear-gradient(0.3turn,${COLORS.white},${COLORS.lightBlue})`,
           borderRadius: "2rem",
           height: "40rem",
-          width: "40rem",
+          width: "75vw",
           boxShadow: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
-        <Typography>{Headlines[0].title}</Typography>
-        <Typography>{Headlines[0].info}</Typography>
+        <Box sx={{ maxWidth: "28vw", paddingLeft: "14rem" }}>
+          <Typography
+            variant="h1"
+            sx={{
+              marginBottom: "2rem",
+            }}
+          >
+            {Headlines[0].title}
+          </Typography>
+          <Typography sx={{ color: COLORS.darkGrey, fontSize: "1rem" }}>
+            {Headlines[0].info}
+          </Typography>
+        </Box>
       </Box>
 
       <Box className="bottom">
