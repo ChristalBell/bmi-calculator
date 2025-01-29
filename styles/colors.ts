@@ -1,5 +1,6 @@
 export const COLORS = {
   skyBlue: "#e9f8fe",
+  lightBlue: "#d7e7ff",
   blue: "#3260f6",
   pink: " #ffd9ec",
   orange: "#fbede4",
@@ -8,4 +9,6 @@ export const COLORS = {
   purple: "#ad8fda",
   white: "#FFFFFF",
   black: "#2a3348",
+  grey: "#b1bac2",
+  darkGrey: "#6d7380",
 };

@@ -17,14 +17,15 @@ const Hero = () => {
   ];
   console.log(Headlines[0].info);
   return (
-    <Box>
+    <Box sx={{ marginLeft: "4rem", marginTop: "2rem" }}>
       <Box
         className="top"
         sx={{
-          backgroundImage: `linear-gradient(0.3turn,${COLORS.skyBlue},${COLORS.blue})`,
+          backgroundImage: `linear-gradient(0.3turn,${COLORS.skyBlue},${COLORS.lightBlue})`,
           borderRadius: "2rem",
           height: "40rem",
           width: "40rem",
+          boxShadow: 1,
         }}
       >
         <Typography>{Headlines[0].title}</Typography>
