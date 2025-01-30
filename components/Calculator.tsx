@@ -21,10 +21,10 @@ const Calculator = () => {
     }
   };
 
-  const answer = document.getElementById(results);
-  const showResults = (results: any) => {
-    results.style.display = "visible";
-  };
+  // const answer = document.getElementById(results);
+  // const showResults = (results: any) => {
+  //   results.style.display = "visible";
+  // };
 
   return (
     <Box

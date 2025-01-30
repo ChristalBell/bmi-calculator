@@ -40,15 +40,41 @@ const Hero = () => {
           >
             {Headlines[0].title}
           </Typography>
-          <Typography sx={{ color: COLORS.darkGrey, fontSize: "1rem" }}>
+          <Typography sx={{ color: COLORS.darkGrey, fontSize: "1.5rem" }}>
             {Headlines[0].info}
           </Typography>
         </Box>
       </Box>
 
-      <Box className="bottom">
-        <Typography>{Headlines[1].title}</Typography>
-        <Typography>{Headlines[1].info}</Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          marginTop: "15rem",
+        }}
+        className="bottom"
+      >
+        <Box
+          sx={{
+            backgroundImage: `linear-gradient(.5turn,${COLORS.white},${COLORS.lightBlue})`,
+            borderRadius: "2rem",
+            height: "30rem",
+            width: "35vw",
+            boxShadow: 1,
+          }}
+        ></Box>
+        <Box sx={{ width: "30vw", alignContent: "center" }}>
+          <Typography variant="h1">{Headlines[1].title}</Typography>
+          <Typography
+            sx={{
+              color: COLORS.darkGrey,
+              fontSize: "1.5rem",
+              marginTop: "2rem",
+            }}
+          >
+            {Headlines[1].info}
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
