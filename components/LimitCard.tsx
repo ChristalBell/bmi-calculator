@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import React from "react";
+import { COLORS } from "@/styles/colors";
 
 const LimitCard = () => {
   const limits = [
@@ -31,12 +32,58 @@ const LimitCard = () => {
     },
   ];
   return (
-    <Box>
+    <Box sx={{ display: "flex", margin: "12rem 10rem" }}>
+      <Box sx={{ maxWidth: "40vw", marginRight: "10rem" }}>
+        <Typography
+          sx={{
+            fontSize: "2.5rem",
+            fontWeight: "bold",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Limitations of BMI
+        </Typography>
+        <Typography
+          sx={{
+            color: COLORS.darkGrey,
+            fontSize: ".75rem",
+            lineHeight: "1.25rem",
+          }}
+        >
+          Although BMI is often a practical indicator of healthy weight, it is
+          not suited for every person. Specific groups should carefully consider
+          their BMI outcomes, and in certain cases, the measurement may not be
+          beneficial to use.
+        </Typography>
+      </Box>
       {limits.map((limit) => {
         return (
-          <Box key={limit.reason}>
-            <Typography>{limit.reason}</Typography>
-            <Typography>{limit.explanation}</Typography>{" "}
+          <Box
+            key={limit.reason}
+            sx={{
+              color: COLORS.darkGrey,
+              height: "8rem",
+              width: "12rem",
+              padding: "1.5rem",
+              backgroundColor: COLORS.white,
+              boxShadow: 10,
+              borderRadius: "1.25rem",
+              display: "grid",
+            }}
+          >
+            <Typography
+              sx={{
+                color: COLORS.black,
+                fontWeight: "bold",
+                fontSize: "1rem",
+                marginBottom: "1.25rem",
+              }}
+            >
+              {limit.reason}
+            </Typography>
+            <Typography sx={{ fontSize: ".75rem" }}>
+              {limit.explanation}
+            </Typography>{" "}
           </Box>
         );
       })}

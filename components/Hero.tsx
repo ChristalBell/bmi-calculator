@@ -40,7 +40,7 @@ const Hero = () => {
           >
             {Headlines[0].title}
           </Typography>
-          <Typography sx={{ color: COLORS.darkGrey, fontSize: "1.5rem" }}>
+          <Typography sx={{ color: COLORS.darkGrey, fontSize: "1rem" }}>
             {Headlines[0].info}
           </Typography>
         </Box>
@@ -68,7 +68,7 @@ const Hero = () => {
           <Typography
             sx={{
               color: COLORS.darkGrey,
-              fontSize: "1.5rem",
+              fontSize: "1rem",
               marginTop: "2rem",
             }}
           >
