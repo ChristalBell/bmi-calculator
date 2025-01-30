@@ -21,6 +21,11 @@ const Calculator = () => {
     }
   };
 
+  const answer = document.getElementById(results);
+  const showResults = (results: any) => {
+    results.style.display = "visible";
+  };
+
   return (
     <Box
       sx={{
@@ -163,11 +168,15 @@ const Calculator = () => {
             backgroundColor: COLORS.blue,
             color: COLORS.white,
             height: "6rem",
-            width: "15rem",
+            width: "22rem",
             textAlign: "left",
             fontWeight: "bold",
-            fontSize: ".75rem",
-
+            fontSize: "1rem",
+            border: `1px solid ${COLORS.blue}`,
+            borderTopRightRadius: "4rem 80%",
+            borderTopLeftRadius: ".5rem",
+            borderBottomRightRadius: "4rem 80%",
+            borderBottomLeftRadius: ".5rem",
             paddingLeft: "1rem",
             marginTop: "1.5rem",
           }}
@@ -175,15 +184,30 @@ const Calculator = () => {
         >
           Welcome!
         </button>
-        <div style={{ position: "absolute", top: 240, left: 42 }}>
-          <Typography sx={{ color: COLORS.white, fontSize: ".45rem" }}>
+        <div style={{ position: "absolute", top: 230, left: 42 }}>
+          <Typography sx={{ color: COLORS.white, fontSize: ".6rem" }}>
             Enter your height and weight and youll see your BMI result here
           </Typography>
         </div>
 
-        <Typography>Your BMI is ...</Typography>
-        {/* <Typography>{bmi.toFixed(2)}</Typography> */}
-        <Typography>{bmi}</Typography>
+        <div style={{ visibility: "hidden" }} id="results">
+          <Typography>Your BMI is ...</Typography>
+          {/* <Typography>{bmi.toFixed(2)}</Typography> */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: COLORS.yellow,
+              height: "5rem",
+              width: "5rem",
+              borderRadius: "50%",
+              marginLeft: "50%",
+            }}
+          >
+            <Typography>{bmi}</Typography>
+          </Box>
+        </div>
       </Box>
     </Box>
   );
