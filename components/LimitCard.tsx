@@ -58,33 +58,33 @@ const LimitCard = () => {
       </Box>
       {limits.map((limit) => {
         return (
-          <Box
-            key={limit.reason}
-            sx={{
-              color: COLORS.darkGrey,
-              height: "8rem",
-              width: "12rem",
-              padding: "1.5rem",
-              backgroundColor: COLORS.white,
-              boxShadow: 10,
-              borderRadius: "1.25rem",
-              display: "grid",
-            }}
-          >
-            <Typography
+          <div key={limit.reason} style={{}}>
+            <Box
               sx={{
-                color: COLORS.black,
-                fontWeight: "bold",
-                fontSize: "1rem",
-                marginBottom: "1.25rem",
+                color: COLORS.darkGrey,
+                height: "8rem",
+                width: "12rem",
+                padding: "1.5rem",
+                backgroundColor: COLORS.white,
+                boxShadow: 10,
+                borderRadius: "1.25rem",
               }}
             >
-              {limit.reason}
-            </Typography>
-            <Typography sx={{ fontSize: ".75rem" }}>
-              {limit.explanation}
-            </Typography>{" "}
-          </Box>
+              <Typography
+                sx={{
+                  color: COLORS.black,
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                {limit.reason}
+              </Typography>
+              <Typography sx={{ fontSize: ".75rem" }}>
+                {limit.explanation}
+              </Typography>{" "}
+            </Box>
+          </div>
         );
       })}
     </Box>

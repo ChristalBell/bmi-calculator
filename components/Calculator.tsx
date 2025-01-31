@@ -21,11 +21,21 @@ const Calculator = () => {
     }
   };
 
-  // const answer = document.getElementById(results);
   // const showResults = (results: any) => {
-  //   results.style.display = "visible";
+  //   var answer = document.getElementById(results);
+  //   if ((answer = null)) {
+  //     results.style.visibility = "hidden";
+  //   } else {
+  //     results.style.visibility = "visible";
+  //   }
   // };
 
+  const showResults = (results: any) => {
+    var answer = document.getElementById(results);
+    if ((answer = null)) {
+      results.style.visibility = "visible";
+    }
+  };
   return (
     <Box
       sx={{
@@ -190,7 +200,7 @@ const Calculator = () => {
           </Typography>
         </div>
 
-        <div style={{ visibility: "hidden" }} id="results">
+        <div id="results">
           <Typography>Your BMI is ...</Typography>
           {/* <Typography>{bmi.toFixed(2)}</Typography> */}
           <Box
